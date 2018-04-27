@@ -1,0 +1,20 @@
+<html>
+  <div class="container-fluid" >
+  <div *ngIf="authService.angularFireAuth.authState | async as user; else showLogin">
+    <p class="p-2" id="loginText"><b>Welcome, {{user.displayName}}!</b><button (click)="logout()" class="btn btn-default btn-xs float-right" id="logoutButton"><b>Logout</b></button>
+  
+  <app-header></app-header>
+  <div class="content">
+    <!--o header eh fixo, e ai o resto depende do router, com o router outlet-->
+  <router-outlet></router-outlet>
+  </div>
+</div>
+<!--pedaco de codigo que da para referenciar depois-->
+  <ng-template #showLogin>
+    <div class="text-center">
+    <p id="loginMain"><br><br>Welcome to the shopping cart app! <br> Please, login.</p>
+      <button (click)="login()" class="btn btn-info" id="loginButton"><b>Login with Google</b></button>
+    </div>
+    
+  </ng-template>
+</div></html>

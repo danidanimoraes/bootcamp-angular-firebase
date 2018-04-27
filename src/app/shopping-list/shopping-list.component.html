@@ -1,0 +1,42 @@
+<div><button 
+  type="submit" 
+  class="btn btn-info btn-block btn-xs mb-2"
+  (click)="removeAllItems()">CLEAR LIST</button></div>
+
+<div>
+  <p style="background-color: rgba(109, 228, 11, 0.9)"><b>TOTAL PRICE: <span class="p-2"><i>$ {{total}}</i></span></b></p>
+</div>
+  
+<form>
+    <div class="input-group mt-3">
+      <input 
+        type="text" 
+        class="form-control" 
+        placeholder="Item name..." 
+        [(ngModel)]="itemFromInput"
+        name="name"> <!--atualiza a variavel quando digitar; event e databinding-->
+        <input 
+        type="number" 
+        class="form-control" 
+        placeholder="Quantity..." 
+        [(ngModel)]="itemQuantity"
+        name="qtt">
+        <input 
+        type="number" 
+        class="form-control" 
+        placeholder="Unit Price..." 
+        [(ngModel)]="itemPrice"
+        name="price">
+      <button 
+        type="submit" 
+        class="btn btn-primary"
+        (click)="addItem()">ADD</button>
+    </div>
+  </form>
+  <ul class="list-group"
+      (changeOccurred)="onChange()">
+    <app-shopping-list-item 
+      *ngFor="let item of listItemsObservable | async" 
+      [itemFromList]="item"
+      ></app-shopping-list-item>
+  </ul>

@@ -1,0 +1,26 @@
+#loginMain
+{
+  font-family: 'Amatic SC', cursive;
+  font-size: 300%;
+  text-align: center; 
+}
+
+#loginText
+{
+  font-family: 'Amatic SC', cursive;
+  font-size: 150%;
+  text-align: left; 
+  background-color: gray;
+}
+
+#loginButton
+{
+  font-family: 'Josefin Slab', serif;
+  font-size: 150%
+}
+
+#logoutButton
+{
+  font-family: 'Josefin Slab', serif;
+  font-size: 70%
+}
